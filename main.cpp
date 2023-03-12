@@ -26,5 +26,6 @@ int main() {
     cin >> credits;
 
     calculate((unlock_rank - rank) * 140 + 700, rank, credits);
+    system("pause");
     return 0;
 }
