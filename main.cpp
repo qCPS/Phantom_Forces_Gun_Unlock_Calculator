@@ -15,17 +15,24 @@ int main() {
     int unlock_rank;
     int rank;
     int credits;
+    bool stop;
 
-    cout << "Enter the unlock rank of the gun: " << endl;
-    cin >> unlock_rank;
+    do {
+        cout << "Enter the unlock rank of the gun: " << endl;
+        cin >> unlock_rank;
 
-    cout << "Enter your current rank: " << endl;
-    cin >> rank;
+        cout << "Enter your current rank: " << endl;
+        cin >> rank;
 
-    cout << "Enter your current credits: " << endl;
-    cin >> credits;
+        cout << "Enter your current credits: " << endl;
+        cin >> credits;
 
-    calculate((unlock_rank - rank) * 140 + 700, rank, credits);
+        calculate((unlock_rank - rank) * 140 + 700, rank, credits);
+
+        cout << "Enter 1 to stop or 0 to do a new calculation." << endl;
+        cin >> stop;
+
+    } while (not stop);
     system("pause");
     return 0;
 }
