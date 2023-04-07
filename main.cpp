@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 void calculate(int unlock_credits, int rank, int credits) {
@@ -12,6 +13,7 @@ void calculate(int unlock_credits, int rank, int credits) {
 };
 
 int main() {
+    string input;
     int unlock_rank;
     int rank;
     int credits;
@@ -19,13 +21,16 @@ int main() {
 
     do {
         cout << "Enter the unlock rank of the gun: " << endl;
-        cin >> unlock_rank;
+        getline(cin, input);
+        unlock_rank = stoi(input);
 
         cout << "Enter your current rank: " << endl;
-        cin >> rank;
+        getline(cin, input);
+        rank = stoi(input);
 
         cout << "Enter your current credits: " << endl;
-        cin >> credits;
+        getline(cin, input);
+        credits = stoi(input);
 
         calculate((unlock_rank - rank) * 140 + 700, rank, credits);
 
